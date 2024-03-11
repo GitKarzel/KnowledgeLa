@@ -1,0 +1,106 @@
+body {
+    background: #0a0807;
+    height: 100vh;
+    color: white;
+}
+.brand {
+    font-size: 40px;
+    padding: 10px;
+    width: 50%;
+    float: left;
+    text-decoration: underline;
+}
+.menu {
+    font-size: 25px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.menu a:hover {
+    color: #353231;
+    animation: ease 10 10 10 10;
+}
+
+.article_span {
+    text-align: center;
+    text-decoration: none;
+}
+.article_span a {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.article1 {
+    background: #b4aaa6;
+    width: 350px;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    float: right;
+}
+.article1 h2 {
+    text-align: center;
+}
+
+.article2 {
+    background: #b4aaa6;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    float: right;
+}
+.article2 h2 {
+    text-align: center;
+}
+.article3 {
+    background: #b4aaa6;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    float: right;
+}
+.article3 h2, .article3_span {
+    text-align: center;
+}
+.article4 {
+    background: #b4aaa6;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    float: right;
+}
+
+.article4 h2 {
+    text-align: center;
+}
+
+.article5 {
+    background: #b4aaa6;
+    display: flex;
+    width: 350px;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    float: right;
+}
+
+.article5 h2 {
+    text-align: center;
+}
