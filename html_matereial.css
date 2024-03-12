@@ -3,104 +3,59 @@ body {
     height: 100vh;
     color: white;
 }
+
 .brand {
     font-size: 40px;
-    padding: 10px;
-    width: 50%;
+    padding: 15px;
+    width: 40%;
     float: left;
-    text-decoration: underline;
 }
+
 .menu {
-    font-size: 25px;
+    width: 50%;
     display: flex;
-    justify-content: space-around;
-    padding: 10px;
+    justify-content: space-evenly;
+    font-size: 30px;
+    margin-top: 30px;
+    padding-top: 15px;
 }
 
 .menu a {
-    text-decoration: none;
     color: white;
+    text-decoration: none;
 }
 
 .menu a:hover {
     color: #353231;
-    animation: ease 10 10 10 10;
 }
 
-.article_span {
-    text-align: center;
-    text-decoration: none;
+.article {
+    background: #353231;
+    border-radius: 10px;
+    width: 500px;
+    padding: 10px;
+    margin: 10px;
+}
+
+
+.article_span  {
+    display: flex;
+    justify-content: center;
 }
 .article_span a {
-    text-align: center;
-    text-decoration: none;
     color: white;
+    text-decoration: none;
+    padding: 10px;
 }
 
-.article1 {
-    background: #b4aaa6;
-    width: 350px;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    float: right;
-}
-.article1 h2 {
-    text-align: center;
-}
-
-.article2 {
-    background: #b4aaa6;
+.article h2 {
     display: flex;
-    width: 350px;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    float: right;
-}
-.article2 h2 {
-    text-align: center;
-}
-.article3 {
-    background: #b4aaa6;
-    display: flex;
-    width: 350px;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    float: right;
-}
-.article3 h2, .article3_span {
-    text-align: center;
-}
-.article4 {
-    background: #b4aaa6;
-    display: flex;
-    width: 350px;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    float: right;
+    justify-content: center;
 }
 
-.article4 h2 {
-    text-align: center;
-}
-
-.article5 {
-    background: #b4aaa6;
+.container {
     display: flex;
-    width: 350px;
-    flex-direction: column;
-    border-radius: 10px;
-    margin: 5px;
-    padding: 5px;
-    float: right;
-}
-
-.article5 h2 {
-    text-align: center;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }

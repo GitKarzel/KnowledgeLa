@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="html_matereial.css">
 </head>
 <body>
-    <header>
         <div class="brand">
           KnowledgeLab
         </div>
@@ -16,10 +15,9 @@
             <a href="#home">O mnie</a>
             <a href="podmaterials.html">Materiały do nauki</a>
         </div>
-    </header>
-    <div class="article1">
+<div class="container">
+    <div class="article">
         <h2>Formatowanie tekstu:</h2>
-        <span class="article1_span">
             <ul>
                 <li>&lt;b&gt; - Pogrubiony tekst</li>
                 <li>&lt;i&gt; - Pochylony tekst</li>
@@ -36,11 +34,10 @@
                 <li>&lt;sup&gt; - Indeks górny</li>
                 <li>&lt;del&gt; - Usuwa i skreśla</li>
             </ul>
-        </span>
     </div>
-    <div class="article2">
+    <div class="article">
         <h2>Prawidłowe zagnieżdżanie:</h2>
-        <span class="article_span">Aby prawidłowo zagnieżdżcić znacznik w znaczniku powinniśmy robić tak: <br>
+        <span class="article_span">Aby prawidłowo zagnieżdżcić znacznik w znaczniku powinniśmy robić tak:
                 &lt;p&gt; tekst w danym znaczniku &lt;p&gt; prawidłowe zagnieżdżanie i zamknięcie &lt;/p&gt; zamknięcie pierwotnego znacznika &lt;/p&gt;</span>
         <h2>Pojedyncze znaczniki:</h2>
             <ul>
@@ -48,7 +45,7 @@
                 <li>&lt;hr&gt; - horyzontalna linia na całą szerokość</li>
             </ul>
     </div>
-    <div class="article3">
+    <div class="article">
         <h2>Znaki specjalne:</h2>
         <ul>
             <li>Znak specjalny copyright: &copy;</li>
@@ -60,7 +57,7 @@
         </ul>
         <span class="article_span"><a href="https://html.spec.whatwg.org/multipage/named-characters.html">Kliknij tutaj po więcej znaków specjalnych</a></span>
     </div>
-    <div class="article4">
+    <div class="article">
         <h2>Listy:</h2>
         <span class="article_span">
             Wyróżniamy dwie listy &lt;ol&gt; czyli lista uporządkowana oraz &lt;ul&gt; lista nieuporządkowana <br>
@@ -73,9 +70,9 @@
             <li>i - z małe rzymskie</li>
             <li> reversed - układanie od tyłu </li>
         </ol>
-        <span class="article_span">Atrybut <u>start</u> umożliwia nam zaczynanie od wybranej pozycji na liście uporządkowanej.</span>
+        <span class="article_span">Atrybut start umożliwia nam zaczynanie od wybranej pozycji na liście uporządkowanej.</span>
     </div>
-    <div class="article5">
+    <div class="article">
         <h2>Tabele:</h2>
         <ul>
             <li>&lt;Table&gt; - tabela</li>
@@ -87,5 +84,167 @@
             <li>&lt;tfoot&gt; - stopka (podsumowanie) </li>
         </ul>
     </div>
+    <div class="article">
+        <h2>Atrybuty:</h2>
+        <span class="article_span">
+            Atrybuty pozwalają na dodatkowe określenie wartości elementów html, to dodatkowa informacja dla
+            przeglądarki o elemencie. Atrbuty znajdują się wyłącznie w tagu otwierającym 
+            Możesz stworzyć własny atrybut pisząc: &lt;data-gallery-name="nazwaAtrybutu"&gt; 
+        </span>
+        <span class="article_span">
+            <a href="https://www.w3schools.com/tags/ref_attributes.asp">Strona do atrybutów danego znacznika</a>
+        </span>
+    </div>
+    <div class="article">
+        <h2>Klasy oraz indetyfikatory</h2>
+        <span class="article_span">
+            Jak chcemy wybrany element wystylować w css to nadajemy mu klasę za pomocą: &lt;class="nazwa-klasy"&gt; w tagu
+            otwierającym, i pózniej zaznaczamy go w stylu css za pomocą .nazwa-klasy w sekcji head lub w oddzielnym pliku
+            Klasy możemy używać wielokrotnie i ma mniejszą ważność niż indetyfikator
+            Indetyfikatory (id) jest unikalnym kluczem w dokumencie html, # (hash) używa się w stylach css 
+            aby odnależć id. Używa się go raz na wybranym elemencie.
+        </span>
+    </div>
+    <div class="article">
+        <h2>Znaczniki semantyczne:</h2>
+        <span class="article_span">
+            To są znaczniki które same sugerują co będzie w nazwie np footer - stopka (dodatowe informacje)
+        </span>
+        <h2>Kontenery</h2>
+        <span class="article_span">
+            Kontenery to grupy które mają za zadanie grupowanie i stylowanie zebranych elementów, wyróżniamy 3 takie kontenery:
+            &lt;article&gt;, &lt;div&gt;, &lt;section&gt;, &lt;span&gt;
+        </span>
+    </div>
+    <div class="article">
+        <h2>Zdjęcia:</h2>
+        <span class="article_span">
+            Aby dodać zdjęcie trzeba użyć znacznika: <br><br> &lt;img  src="nazwa_zdjęcia.jpg" alt="Tekst który się wyświetli jeśli zdjęcie się nie załaduje"&gt;<br><br>
+            Możemy również dodać zdjęcie za pomocą linku do zdjecia: <br><br>
+            &lt;img  src="link obrazu" alt="Tekst który się wyświetli jeśli zdjęcie się nie załaduje"&gt;
+        </span>
+        <h2>Video</h2>
+        <span class="article_span">
+            Aby dodać video należy używać znacznika <br>
+             &lt; video controls src="link do nagrania"&gt;&lt;/video&gt;<br>
+            albo użyć &lt; video controls src="plik video.mp4"&gt;&lt;/video&gt;<br>
+        </span>
+    </div>
+    <div class="article">
+        <h2>Hiperłącza:</h2>
+        <span class="article_span">Hiperłącza czyli inaczej link do innej strony <br><br>
+                    &lt;a href="#">link bezwzględny&gt;<br><br>
+                    &lt;a href=".../nazwa-folderu.html">link względny odwołuje się do głównego folderu z /nazwa-folderu.html&gt;<br><br>
+                    &lt;a href=".../Screenshots.png">link odwołuje się do folderu wyżej z ../Screenshots.png&gt;<br><br>
+                    &lt;a href=".../...Screenshots2.png">odwołanie się do folderu wyżej wyżej ../..Screenshots2.png&gt;<br><br>
+                    &lt;a href="tel:123123123"> - telefon komórkowy 123123123 &gt;<br><br>
+                    &lt;a href="mailto:nazwamaila@gmail.com"> - mail &gt;<br><br>
+                    &lt;a href="#"> - pusty link&gt;<br><br>
+                    &lt;a href="#kotwica"> możemy za pomocą linków założyć kotwice i przechodzić kliknięciem do danego elementu. 
+                        Aby tak zrobić musisz mieć odnośnik z id (tam gdzie chcesz szybko się przenosić) oraz użyć #nazwaKotwicy &gt;<br><br>
+        </span>
+    </div>
+    <div class="article">
+        <h2>Box model</h2>
+        <span class="article_span">
+            Każdy element html są pudełkami (z ang. box) i posiadają wysokość oraz szerokość<br>
+            Każdy element ma wysokość oraz szerokość, ale są zasadnicze różnice między elementami blokowymi oraz linowymi
+        </span>
+            <ul>
+                <li>Elementy Blokowe:
+                    <ul>
+                        <li>- są elementami prostokątnymi</li>
+                        <li>- mogą mieć ustawioną szerokość wysokość, margines i dopełnienie</li>
+                        <li>- nie łamią się jak tekst do nowej lini</li>
+                    </ul>
+                </li>
+                <li>Elementy liniowe:
+                    <ul>
+                        <li>- płyną z tekstem wraz z innymi elemenatmi liniowymi</li>
+                        <li>- nie mogą mieć ustawionej szerokości oraz długości, marginesów i dopełnienia</li>
+                        <li>- łamią się z końcem linii</li>
+                    </ul>
+                </li>
+            </ul>
+        <span class="article_span">
+            Wszystkie te właściwości muszą być przewidywalne i muszą działać na wszystkich przeglądarkach <br>
+            Model pudełkowy pozwala nam na budowanie układu - layoutu strony z klocków z uzględnieniem:
+        </span>
+        <ul>
+            <li> wymiarów każdego z elementów blokowego </li>
+            <li> marginesów czyli odstępow między elementami</li>
+            <li> padding tworzy wewnętrzne dopełnienie między obramowaniem, a treścią </li>
+            <li> określa pozycję na stronie</li>
+        </ul>
+        <span class="article_span">
+            Domyślne wartości elementów blokowych: <br>
+        Elementy blokowe mają width na 100% dzięki czemu wypełniają calą dostępną linie, height auto pozwala na dostosowywanie
+        się wysokości elementu do ilości treści
+        </span>        
+    </div>    
+    <div class="article">
+        <h2>Box sizing:</h2>
+        <span class="article_span">
+            Określa jak width, height, margin oraz padding wpływa na element html, często sprawia, że 
+                elementy nie zachowują tak jak byśmy się spodziewali. dostępne wartości:
+        </span>
+        <ul>
+            <li> <span>Content-box</span> - domyślna wartość, szerokość i wysokość zawiera samą treść, bez dopełnienia, oraz obramowania.</li>
+            <li> <span>Padding-box</span> - szerokość i wysokość zawiera treść i dopełnienie.</li>
+            <li> <span>Border-box</span> - szerokość, wysokość zawiera treść, dopełnienie oraz obramowanie.</li>
+        </ul>
+        <span class="article_span">
+            Jaką w praktyce element blokowy ma width oraz height? można to policzyć<br><br>
+            Szerokośc pudełka: <br>
+            width + padding (left i right) + border (left i right) = 140 + 2 x 20px + 2 x 15px = 210px <br><br>
+            Wysokość pudelka: <br>
+            height  + padding + border = 60 + 2 x 20px + 2 x 15px = 130px
+        </span>
+        <img src="magin.jpg" alt="" width="100%">
+    </div>
+    <div class="article">
+        <h2>Display</h2>
+        <span class="article_span">
+            Właściwość display jest kluczem w kontroli układu strony w dokumencie HTML. Elementy html mają z góry ustalone 
+            domyślne wartości display jak inline czy block.
+        </span>
+        <h2>Dispaly inline:</h2>
+        <span class="article_span">
+            Liniowe elementy zajmują tylko tyle miejsca ile potrzebują. ustawiają sie jeden po drugim i nie mogą posiadać jako dzieci
+            elementów blokowych. <br>
+            Przykłady elementów liniowych: &lt;a&gt;,&lt;i&gt;,&lt;u&gt;b&lt;img&gt;,&lt;strong&gt;,&lt;small&gt;
+            Elementy liniowe przed oraz za innym elementem blokowymi bedą w oddzielnej linii, ale to wynika z natury
+            elementu blokowego, a nie liniowego. Element blokowy zawsze zaczyna się i zajmuję całą linię. <br>
+            Jedyny sposób kiedy element liniowy przechodzi do nowej linii jest, gdy nie mieści się na szerokość 
+            okna. Taka treść musi przejść do nowej linii, ale ponownie zajmuje tyle miejsca ile jest jej potrzebne.
+            Ustawianie width oraz height dla elementu liniowego nie ma sensu, zajmie i tak tyle miejsca ile jest mu potrzebne ma 
+            własną treść.
+        </span>
+        <h2>Elementy liniowe zastępowalne (replaced element)</h2>
+        <span class="article_span">
+            Jest jednak jeden wyjątek, elementy liniowe jak obrazek czy video, którym mozna ustawić wymiary width i height.
+                Natomiast to co zostanie załadowane w video czy obrazek potrzebuje więcej miejsca, przez co rozpycha te elementy.
+                Treść tych elementów może mieć ustawione wymiary jak szerokość i wysokość.
+        </span>
+    </div>
+    <div class="article">
+        <h2>Nagłówki:</h2>
+        <span>Wyróżniamy 6 wielkości nagłówka od największego do najmniejszego:</span>
+        <ul>
+            <li>&lt;h1&gt;Tekst&lt;/h1&gt;</li>
+            <li>&lt;h2&gt;Tekst&lt;/h2&gt;</li>
+            <li>&lt;h3&gt;Tekst&lt;/h3&gt;</li>
+            <li>&lt;h4&gt;Tekst&lt;/h4&gt;</li>
+            <li>&lt;h5&gt;Tekst&lt;/h5&gt;</li>
+            <li>&lt;h6&gt;Tekst&lt;/h6&gt;</li>
+        </ul>
+        <h2>Dodatkowe znaczniki blokowe:</h2>
+        <span>
+            &lt;main&gt;Znacznik w którym powinniśmy umieszczać główną treść&lt;/main&gt;
+            &lt;header&gt;Zazwyczaj uzywamy go jako nagłówka w kodzie&lt;/header&gt;
+            &lt;footer&gt;Używamy go jako stopkę strony&lt;/footer&gt;
+        </span>
+    </div>
+</div>
 </body>
 </html>
