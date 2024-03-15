@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #0a0807;
+            height: 100vh;
+            color: white;
+        }
+
+        .brand {
+            font-size: 40px;
+            padding: 15px;
+            width: 40%;
+            float: left;
+        }
+
+        .menu {
+            width: 50%;
+            display: flex;
+            justify-content: space-evenly;
+            font-size: 30px;
+            margin-top: 30px;
+            padding-top: 15px;
+        }
+
+        .menu a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .menu a:hover {
+            color: #353231;
+        }
+        @media (max-width: 1050px) {
+        .menu {
+            font-size: 18px;
+        }
+        }
+        @media (max-width: 575px) {
+            .brand {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+            .menu {
+                font-size: 20px;
+            }
+        }
+        @media (max-width: 800px) {
+            .brand {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+        }
+    </style>
+
+    <script>
+        /*
+            -   relational operators - operatory relacyjne porównują operandy 
+            i zwracają true jeśli spełnione jest porónanie
+
+            - typeof operator - operator zwracający typ wartości w zmiennej lub stałej. Typ określony 
+            jest jako łańcuch znaków.
+
+            - Zmienna niezadeklarowana to taka, która nie była powołana do zycia za pomocą:
+             let, var czy const. Zmienna niezdefiniowana to taka, która jest utworzona ale nie ma przypisanej
+             wartości początkowej. Zmienna zadeklarowana jest utworzona z let, var lub const, a gdy ma 
+             przypisaną wartość to dodatkow jest zdefiniowana.
+
+             - Koercja to automatyczna konwersja typu wartości w JS gdy wymaga tego sytuacja.
+        */
+
+        let obj = { data: 'a'};
+         if ('data' in obj) console.log('jest true');
+
+         let date = new Date(2024, 12, 20);
+        console.log(date)
+
+        if(date instanceof Date) console.log('jest z Date');
+
+        console.log(typeof 13); //"number"
+        console.log(typeof "str"); // "string"
+        console.log(typeof "46"); //string
+        console.log(typeof false); //"boolean"
+        console.log(typeof {a: 12}); //"object"
+        console.log(typeof [1,2,3]); //"object"
+        console.log(typeof undefined); //"undefined"
+        console.log(typeof 10n); //"bigint"
+        console.log(typeof Symbol()); //"symbol"
+        console.log(typeof console.log()); //"function"
+        console.log(typeof null); //"object" - błąd
+
+        let dane = 200;
+        if (typeof dane == "number") {
+            console.log("liczba");
+        } else if (typeof dane == "string") {
+            console.log("String");
+        }
+
+        let a; // zadeklarowana
+        console.log(a); // niezdefiniowana
+
+        a = 23; //zdefiniowana
+
+        //b; // niezadeklarowana
+
+        // Konwersje jawne
+        let str = String(22);
+        console.log(typeof str); //string
+
+        let num = parseInt("2423");
+        console.log(typeof num); //number
+
+        // Konwersje niejawne 
+
+        let  bool = "test" + 10;
+        console.log(bool); // "string test10"
+
+        if (10 - "3" == 7) console.log("Wykona się");
+        let c = +"12"; //12 jako number 
+        console.log(c); 
+
+        if ( {} == "[object object]") console.log("Wykona się");
+        console.log(String({})); // [object Object]
+
+        /*
+            Negacja wymusza konwersję na boolean i odwraca znak, ale podwójna negacja w praktyce konwertuje 
+            "prawdziwe" wartości na true. a "falsy" na false
+        */
+
+        //console.log(!!1); //true
+
+        /*
+            W js możemy utworzyć globale zmienne czyli bedą dostępne w całym programie. Natomiast zmienne
+            / stałe lokalne o zasięgu bloku kodu utworzymy z let i const. W bloku kodu możemy nawet
+            powołać nową zmienną / stałą o tej samej nazwie co globalna i przesłoni ją w tym bloku,
+            będzie inną wartością
+         */
+        /*
+         let aA = 10;
+         const data = "Asia"
+         if (true){
+            let b = 100; // b tylko w tym bloku
+
+            console.log(aA); // 10
+            const data = "Kasia"
+            console.log(data); // "Kasia"
+            
+        }
+
+         console.log(b); // undefined - jest błąd ponieważ b nie istnieje w takim zakresie
+         */
+        /*
+         let name = "kazik";
+         if (name == "Kazik") {
+            let name = "Wiktoria";
+            console.log(name); // Wiktoria
+        }  
+        console.log(name);*/
+        /*
+            Zmienna var
+            Zanim w ES2015/ES6 wprowadzono let i const w JS mieliśmy tylko dostępne var do powołania zmiennych.
+            Tworząc zmienną var musimy pamiętać że nie ma zasięgu blokowego!
+        */
+       /*
+        var d = 10;
+        if (true) {
+        var d = 78;
+        console.log(d); // 78
+        }
+        console.log(d); // 78
+        */
+        /*
+            Funkcje pozwalają na wielokrotne wywołanie jakiegoś kodu. Tworzymy je za pomocą slowa kluczowego 
+            function oraz dowolnej nazwy funkcji. Wywołuje je z pomocą nawiasów okrągłych ()
+            Funckaj może przyjmować dane, w jej deklaracji podajemy je po przecinku i są to wewnętrzne zmienne
+            funkcji zwane parametrami.Natomiast przy wywołaniu funckji przekazywane dane do funkcji
+            nazywamy Parametrami.
+        */
+
+        // Deklaracja funkcji
+        // a, b, c, to parametry funkcji
+        function test(a, b, c) {
+            let sum = a + b + c;
+            console.log("Suma:", sum);
+        }
+
+        // przekazywane dane to argumenty
+        test(3,4,5); //12
+
+        function multiply(a, b) {
+            let multiply = a * b;
+            console.log("Wynik to:", multiply);
+        }
+
+        multiply(2, 10);
+        multiply(100, 56);
+        multiply(12345, 12345);
+
+        /*
+            return pozwala na wyjście z funkcji oraz zwrócenie z niej wartości
+        */
+
+        function japierdziele(a, b) {
+            let result = a - b;
+            return result;
+        }
+
+        let dataTa = japierdziele(100, 45);
+        console.log("Rezultat",dataTa) // 55
+
+
+        function test(name) {
+            if (name == "Asia") {
+                return ;
+            } else {
+                console.log("Witaj koleżko");
+            }
+        }
+
+        test("wiki")
+
+        function averageNum(a, b, c, d) {
+            return avg = (a + b + c + d)/4;
+        }
+        averageNum(1, 2, 3, 4);
+        console.log("Średnia", avg);
+        averageNum(30, 50, 60, 70);
+        console.log("Średnia", avg);
+        averageNum(5, 10, 15, 20);
+        console.log("Średnia", avg);
+
+        // Funkcje mogą zwracać również obiekty
+        // indexOf - wyszukanie czegoś w nazwie
+        function createUser(name, email, city) {
+            if (name.lenght < 3) return null;
+            if (email.lenght < 2) return null;
+            if (email.indexOf("@") < 0) return null;
+            if (city.lenght < 2) return null;
+
+            let obj = {
+                name: name,
+                email: email,
+                city: city,
+                type: "employer"
+            }
+
+            return obj;
+        }
+
+        let user1 = createUser("Wiktoria", "wiktoria@gmail.com", "Klimontów");
+        console.log(user1);
+        let user2 = createUser("Łukasz", "wiktoria@gmail.com", "Klimontów");
+        console.log(user2);
+
+        function createPhone(brand, name, system, color) {
+            if (system != "Android" && system != "IOS") return null;
+            
+            let phone = {
+                brand: brand,
+                name: name,
+                system: system,
+                color: color
+            };
+            return phone;
+        }
+
+        let userPhone1 = createPhone("Sony", "Xperia", "Android", "black")
+        console.log(userPhone1);
+        let userPhone2 = createPhone("Iphone", "Max", "IOS", "black")
+        console.log(userPhone2);
+        let userPhone3 = createPhone("Nokia", "NGAGE", "Symbian", "silver")
+        console.log(userPhone3);
+
+
+        /*
+            function expression - wyrażenie funkcyjne to funkcja anonimowa przypisana do zmiennej lub stałej
+        */
+        /*
+       let showName = function (name) {
+            console.log(name);
+        }
+
+        showName  ("Wiktoria")
+
+
+        let testTego = showName;
+        testTego("Kasia");
+
+        
+        let addition = function (a, b) {
+            console.log("Wynik to:", a + b);
+        };
+        console.log(addition(2,5));
+        let additionTest = addition;    
+        console.log(additionTest(10,20));
+        */
+        /*
+            callback - to funkcja przekazana jako argument do innej funkcji, dzięki czemu może być wewnątrz 
+            wywołana jeśli zachodzi potrzeba.
+        */
+
+        function show(data) {
+            console.log(data);
+        }
+
+        function showArr(arr, callback) {
+            for (let i = 0; i < arr.lenght; i++) {
+                let num = arr[i];
+                callback(num);
+            }
+        }
+
+        showArr([1,2,3,4,5], show);
+
+        function greaterThan5(arr, callback) {
+            for (let i = 0; i < arr.length; i++) {
+                let numbers = arr[i];
+                if (numbers > 5) callback(numbers);
+            }
+        }
+
+        greaterThan5([1,2,3,4,5,6,7,8,9,10], show);
+
+        /*
+            Obiekt arguments w funkcji posiada przekazywane argumenty przy wywołaniu funkcji. Obiekt ten dostepny 
+            jest tylko w zwykłych funkcjach, nie ma go w strzałkowych.
+        */
+
+        function sumAll() {
+            let result = 0;
+            for (let i = 0; i < arguments.length; i++) {
+                 result += arguments[i];
+                }            
+            return result;
+            }
+
+            let sum = sumAll(1,2,3,4,5,6,7,8,9);
+            console.log(sum); //45
+
+        /*
+            Prymitywy przekazywane są przez kopię, a obiekty przez referencję. Obiekty zatem mogą być 
+            zmieniane po przekazaniu do funkcji.
+        */
+        
+            function foo(num, objJ) {
+                num = 10;
+                console.log(num);
+                objJ.data = "Wiktoria";
+                objJ.test = 11;
+            }
+
+            let aA = 5;
+            let objJ = {data: "txt"};
+            foo(aA, objJ);
+
+            console.log(aA); // 5
+            console.log(objJ);
+
+
+            function panda(arr) {
+                for (let i = 0; i < arr.length; i++) {
+                    let num = arr[i];
+                    arr[i] = num * 2;
+                }
+            }
+
+            let tab = [1,2,3,4,5];
+            panda(tab);
+            console.log(tab); 
+            
+            // Funkcje zagnieżdżone
+
+            function foo(data) {
+                function bar(num) {
+                    return num * 3;
+                }
+                let result = bar(data);
+                return result;
+            }
+
+            console.log(foo(10)); // 30
+
+            /*
+                Domyślne argumenty funkcji dostępne są od EcmaScript2015 - ES6
+            */
+            function createUser(name = "unknown", email = "unknown@gmail.com") {
+                return {
+                    name: name,
+                    email: email
+                };
+            }
+
+            let user3 = createUser("Ania");
+            console.log(user3); // Ania unknown@gmail.com
+
+            /*
+                Operator rest zbiera przekazane argumenty do funkcji w tablicę np function foo(...params) { }
+            */
+            function foo(...params) {
+                console.log(params);
+            }   
+
+            foo(1,2,3,4,5,6);
+
+            /*
+                Spread operator z EcmaScript2015 rozbija tablice/obiekt na pojedyńcze wartości
+            */
+
+            function bar(a, b, c) {
+                console.log(arguments);
+            }
+
+            let arr = [99, 100, 101];
+            bar(...arr); //spread operator
+
+
+            let obj1 = {
+                name: "Wiktoria",
+                city: "Klim"
+            };
+
+            let user4 = {
+                ...obj1,
+                email: "Wiki@gmail.com"
+            };
+
+            console.log(user4);
+
+            function createComputer(cpu, ram, dysk) {
+                return  {
+                    cpu: cpu,
+                    ram: ram,
+                    dysk: dysk
+                };
+            };
+
+            let computer = createComputer("amd","8gb","1TB");
+
+            function createLaptop(type, weight) {
+                return {
+                    ...computer,
+                    type: type,
+                    weight: weight
+                }
+            };
+            let laptop = createLaptop("","laptop","3");
+            console.log(laptop);
+
+
+
+            function poo(imie, nazwisko, miasto ="uknown") {
+                return {
+                    imie: imie,
+                    nazwisko: nazwisko,
+                    miasto: miasto
+                };
+            };
+            let  osoba = poo("Wiktoria", "Bień","Klimontów");
+
+            function doo(email = "unknow@gmail.com", tel,) {
+                return {
+                    ...osoba,
+                    email: email,
+                    tel: tel
+                };
+            };
+            let kontakt = doo("Wiktoria@gmail.com", 123123123);
+            console.log(kontakt);
+
+
+            /*
+                Metody to wewnątrzne funkcje obiektu, które zwykle operują na danych tego obiektu. Metoda odwołuje się 
+                do danych swojego obiektu za pomocą this.nazwaZmiennej
+            */
+
+            let phone = {
+                brand: "Sony",
+                model: "Xperia",
+                manufactureDate: 2023,
+                connect: function (msg) {
+                    console.log("łącze się i przekazuję: " + msg);
+                    this.getInfo();
+                },
+                getInfo: function () {
+                    console.log(this.brand, this.model, this.manufactureDate);
+                }
+            }
+
+            phone.connect("hello");
+            phone.getInfo();
+
+
+            let carFactory = {
+                name: "Factory",
+                city: "Kraków",
+                brand: "ford",
+                employees: [],
+                addEmployee: function (name, surname) {
+                    const obj = {
+                        name: name,
+                        surname: surname,
+                        email: `${name.toLowerCase()}.${surname.toLowerCase()}@gmail.com`
+                    };
+                    let index = this.employees.length;
+                    this.employees[index] = obj;
+                },
+                showEployees: function () {
+                    console.log(this.name, "employees");
+                    for (let i = 0; i < this.employees.length; i++) {
+                        const e = this.employees[i];
+                        console.log(e.name, e.surname, e.email);
+                    }
+                },
+                makeCar: function (model, color) {
+                    return {
+                        brand: this.brand,
+                        model: model,
+                        color: color
+                    };
+                }
+            };
+
+            carFactory.addEmployee("Wiktoria","Bień");
+            carFactory.addEmployee("Łukasz","Puzio");
+            console.log(carFactory);
+
+            carFactory.showEployees();
+
+            let car1 = carFactory.makeCar("Mustang", "red");
+            console.log(car1);
+
+            carFactory.name = "Factory Ltd.";
+            carFactory["name"] = "Car Factory Ltd";
+            console.log(carFactory.name);
+
+
+            let school = {
+                name: "ZS2ND",
+                city: "Nowa Dęba",
+                students: [],
+                addStudents: function (name, surname, ) {
+                    let obj = {
+                        name: name,
+                        surname: surname
+                    };
+                    let index = this.students.length;
+                    this.students[index] = obj;
+                },
+                showStudents: function () {
+                    console.log(this.students);
+                    for (let i = 0; i < this.students.length; i++) {
+                        const e = this.students[i];
+                        console.log(e.name, e.surname);
+                    } if (this.students == 0) {
+                        console.log("Szkoła nie ma studentów");
+                    }
+                },
+                getNumStudents: function () {
+                    return this.students.length;
+                },
+                resetStudents: function () {
+                    this.students = [];
+                }
+            };
+
+
+            school.addStudents("Marcin","Puzio")
+            school.addStudents("Maks","Kwaśnik")
+            school.addStudents("Wiktoria","Bień")
+            console.log(school);
+            console.log(school.getNumStudents);
+            console.log(school.getNumStudents);
+
+            school.showStudents();
+
+            school.resetStudents();
+
+            /*
+                Funkcja strzałkowa czyli arrow function to skrócony zapis dodany od wersji EcmaScript2015/ES6
+            */
+
+            function test(a, b) {
+                return a * b;
+            };
+
+            let multiplyTest = (a, b) => a * b;
+            console.log(multiplyTest(3,9)); // 30
+
+            let substrack = (a, b) => {
+                return a - b;
+            };
+
+            console.log(substrack(15, 3));
+
+
+
+            /*
+                Funkcja strzałkowa nie ma dostępu do obiektu arguments, ale możemy użyć operator rest.
+            */
+
+          // let show = () => console.log(arguments);
+          // show(1,2,3,4,);
+
+
+           let showed = (...params) => console.log(params);
+           showed(1,2,3,4,);
+
+           let getObj = (data) => {
+            return {
+                data: data
+            };
+           }
+
+           let getObj2 = (data) => (
+                {
+                    data: data
+                }
+           );
+
+           console.log(getObj2("test"));
+
+           /*
+                IIFE - Immediately Invoked Function expression to funkcja natychmiastowa,
+                również anonima. Ogranicza dostęp do zmiennych i funkcji tylko od niej, czyli nie zaśmieca 
+                globalnymi danymi naszego programu.
+           */
+                (function(data)
+                {
+                    console.log(data);
+                })("test2");
+</script>
+</head>
+<body>
+    <div class="brand">
+        KnowledgeLab
+      </div>
+      <div class="menu">
+          <a href="index.html">Strona główna</a>
+          <a href="#home">O mnie</a>
+          <a href="podmaterials.html">Materiały do nauki</a>
+      </div>
+</body>
+</html>
