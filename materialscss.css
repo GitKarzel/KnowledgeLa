@@ -81,3 +81,8 @@ p{
         justify-content: center;
     }
 }
+@media (max-width: 1050px) {
+    .menu {
+      font-size: 18px;
+    }
+  }
